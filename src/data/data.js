@@ -7,3 +7,11 @@ export const database = {
     },
   ],
 };
+
+export const changePassword = (email, newPassword) => {
+  const user = database.users.find((user) => user.email === email);
+  if (user) {
+    user.password = newPassword;
+  }
+  return user;
+};
